@@ -2,8 +2,8 @@
 import React from 'react'
 
 const MovieReviews = props =>
-  <div class="review-list">
-    <ul class="review">
+  <div className="review-list">
+    <ul className="review">
 
     </ul>
   </div>
