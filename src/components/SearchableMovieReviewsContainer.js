@@ -3,8 +3,6 @@ import 'isomorphic-fetch';
 import MovieReviews from './MovieReviews'
 
 const NYT_API_KEY = 'roUiJGu2cVNTbHgkpz3k12Bvl4DtMpK3';
-const URL = 'https://api.nytimes.com/svc/movies/v2/reviews/all.json?'
-            + `api-key=${NYT_API_KEY}`;
 
 // Code SearchableMovieReviewsContainer Here
 class SearchableMovieReviewsContainer extends Component {
@@ -17,7 +15,9 @@ class SearchableMovieReviewsContainer extends Component {
   }
 
   handleFetch = event => {
-    fetch(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${this.state.search}` + `api-key=${NYT_API_KEY}`)
+    event.preventDefault()
+    const URL = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${this.state.search}` + `api-key=${NYT_API_KEY}`
+    fetch(URL)
     .then(resp => resp.json())
     .then(json => this.setState({
       reviews: json
