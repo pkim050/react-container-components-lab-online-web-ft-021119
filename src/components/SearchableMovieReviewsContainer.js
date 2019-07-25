@@ -32,7 +32,7 @@ class SearchableMovieReviewsContainer extends Component {
 
   render() {
     return (
-      <div class="searchable-movie-reviews">
+      <div className="searchable-movie-reviews">
         <form onSubmit={this.handleFetch}>
           <input type="text" name="search" onChange={this.handleChange} />
           <input type="submit" />
