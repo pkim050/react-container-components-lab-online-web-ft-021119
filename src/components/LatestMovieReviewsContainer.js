@@ -11,14 +11,14 @@ class LatestMovieReviewsContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      
+
     }
   }
 
   render() {
     return (
       <div class="latest-movie-reviews">
-      
+
       </div>
     )
   }
