@@ -20,7 +20,6 @@ class LatestMovieReviewsContainer extends Component {
     .then(resp => resp.json())
     .then(data =>
       this.setState({
-      debugger
       reviews: data
     }))
   }
