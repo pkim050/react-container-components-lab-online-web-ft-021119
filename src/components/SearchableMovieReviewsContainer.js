@@ -11,12 +11,13 @@ class SearchableMovieReviewsContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      reviews: null
+      reviews: null,
+      search: ""
     }
   }
 
   handleFetch = event => {
-    fetch(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${event}` + `api-key=${NYT_API_KEY}`)
+    fetch(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${this.state.search}` + `api-key=${NYT_API_KEY}`)
     .then(resp => resp.json())
     .then(json => this.setState({
       reviews: json
@@ -33,7 +34,7 @@ class SearchableMovieReviewsContainer extends Component {
     return (
       <div class="searchable-movie-reviews">
         <form onSubmit={this.handleFetch}>
-          <input type="text" onChange={this.handleChange} />
+          <input type="text" name="search" onChange={this.handleChange} />
           <input type="submit" />
         </form>
       </div>
