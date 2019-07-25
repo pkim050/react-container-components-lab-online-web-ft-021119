@@ -23,10 +23,19 @@ class SearchableMovieReviewsContainer extends Component {
     }))
   }
 
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   render() {
     return (
       <div class="searchable-movie-reviews">
-
+        <form onSubmit={this.handleFetch}>
+          <input type="text" onChange={this.handleChange} />
+          <input type="submit" />
+        </form>
       </div>
     )
   }
