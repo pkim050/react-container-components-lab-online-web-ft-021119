@@ -11,22 +11,22 @@ class LatestMovieReviewsContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: null
+      reviews: null
     }
   }
 
   handleFetch = event => {
-    fetch(`https://api.nytimes.com/svc/movies/v2/reviews/all.json`)
+    fetch(URL)
     .then(resp => resp.json())
-    .then(json => this.setState({
-      data: json
+    .then(data => this.setState({
+      reviews: data
     }))
   }
 
   render() {
     return (
       <div class="latest-movie-reviews">
-        <MovieReviews onFetch={this.handleFetch} />
+        <MovieReviews onLoad={this.handleFetch} reviews={this.reviews} />
       </div>
     )
   }
