@@ -25,7 +25,7 @@ class LatestMovieReviewsContainer extends Component {
 
   render() {
     return (
-      <div class="latest-movie-reviews">
+      <div className="latest-movie-reviews">
         <MovieReviews onLoad={this.handleFetch} reviews={this.state.reviews} />
       </div>
     )
