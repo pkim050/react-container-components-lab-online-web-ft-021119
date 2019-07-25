@@ -6,11 +6,11 @@ const NYT_API_KEY = 'roUiJGu2cVNTbHgkpz3k12Bvl4DtMpK3';
 
 // Code SearchableMovieReviewsContainer Here
 class SearchableMovieReviewsContainer extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
-      reviews: null,
-      search: ""
+      reviews: [],
+      searchTerm: ""
     }
   }
 
@@ -20,7 +20,7 @@ class SearchableMovieReviewsContainer extends Component {
     fetch(url)
     .then(resp => resp.json())
     .then(json => this.setState({
-      reviews: json
+        reviews: json
     }))
   }
 
@@ -34,7 +34,7 @@ class SearchableMovieReviewsContainer extends Component {
     return (
       <div className="searchable-movie-reviews">
         <form onSubmit={this.handleFetch}>
-          <input type="text" name="search" onChange={this.handleChange} />
+          <input type="text" onChange={this.handleChange} name="searchTerm" />
           <input type="submit" />
         </form>
 
