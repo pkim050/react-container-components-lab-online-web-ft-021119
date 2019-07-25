@@ -16,7 +16,7 @@ class SearchableMovieReviewsContainer extends Component {
 
   handleFetch = event => {
     event.preventDefault()
-    const url = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${this.state.search}` + `api-key=${NYT_API_KEY}`
+    const url = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${this.state.search}api-key=${NYT_API_KEY}`
     fetch(url)
     .then(resp => resp.json())
     .then(json => this.setState({
