@@ -20,7 +20,7 @@ class SearchableMovieReviewsContainer extends Component {
     .then(resp => resp.json())
     .then(json => this.setState({
       reviews: json
-    })console.log(json))
+    }))
   }
 
   render() {
