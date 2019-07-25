@@ -19,9 +19,8 @@ class SearchableMovieReviewsContainer extends Component {
     fetch(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${event}` + `api-key=${NYT_API_KEY}`)
     .then(resp => resp.json())
     .then(json => this.setState({
-      console.log(json)
       reviews: json
-    }))
+    })console.log(json))
   }
 
   render() {
