@@ -18,8 +18,7 @@ class LatestMovieReviewsContainer extends Component {
   handleFetch = event => {
     fetch(URL)
     .then(resp => resp.json())
-    .then(data =>
-      console.log(data)
+    .then(data => 
       this.setState({
       reviews: data
     }))
