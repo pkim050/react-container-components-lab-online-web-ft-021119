@@ -3,9 +3,9 @@ import React from 'react'
 
 const MovieReviews = props =>
   <div className="review-list">
-    <ul className="review">
-
-    </ul>
+    <div className="review">
+      console.log(props)
+    </div>
   </div>
 
 export default MovieReviews
