@@ -11,15 +11,16 @@ class SearchableMovieReviewsContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: null
+      reviews: null
     }
   }
 
   handleFetch = event => {
-    fetch(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${event}`)
+    fetch(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${event}` + `api-key=${NYT_API_KEY}`)
     .then(resp => resp.json())
     .then(json => this.setState({
-      data: json
+      console.log(json)
+      reviews: json
     }))
   }
 
